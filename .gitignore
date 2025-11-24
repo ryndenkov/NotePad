@@ -1,0 +1,36 @@
+# Build outputs
+*.apk
+*.aar
+*.aab
+/build
+/app/build
+/bin
+/gen
+/out
+
+# IDE
+*.iml
+.idea/
+*.iws
+
+# Gradle
+.gradle/
+gradle-app.setting
+
+# Android
+local.properties
+.externalNativeBuild
+.cxx/
+captures/
+*.keystore
+*.jks
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+
+# Kotlin
+*.kotlin_module

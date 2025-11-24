@@ -1,4 +1,4 @@
-package com.ryndenkov.notepad.ui.theme
+package com.ryndenkov.notepad.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

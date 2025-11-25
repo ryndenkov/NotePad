@@ -3,7 +3,11 @@ package com.ryndenkov.notepad.domain
 import kotlinx.coroutines.flow.Flow
 
 interface NotesRepository {
-    fun addNote(note: Note)
+    fun addNote(
+        title: String,
+        content: String
+    )
+
     fun deleteNote(nodeId: Int)
     fun editNote(note: Note)
     fun getAllNotes(): Flow<List<Note>>

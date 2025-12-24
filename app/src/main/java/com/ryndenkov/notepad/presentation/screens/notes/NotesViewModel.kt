@@ -1,19 +1,14 @@
 package com.ryndenkov.notepad.presentation.screens.notes
 
-import android.util.Log
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ryndenkov.notepad.data.TestNotesRepositoryImpl
-import com.ryndenkov.notepad.domain.AddNoteUseCase
-import com.ryndenkov.notepad.domain.DeleteNoteUseCase
-import com.ryndenkov.notepad.domain.EditNoteUseCase
+import com.ryndenkov.notepad.data.NotesRepositoryImpl
 import com.ryndenkov.notepad.domain.GetAllNotesUseCase
-import com.ryndenkov.notepad.domain.GetNoteUseCase
 import com.ryndenkov.notepad.domain.Note
 import com.ryndenkov.notepad.domain.SearchNotesUseCase
 import com.ryndenkov.notepad.domain.SwitchPinnedStatusUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
@@ -23,8 +18,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class NotesViewModel : ViewModel() {
-    private val repository = TestNotesRepositoryImpl
+class NotesViewModel(context: Context) : ViewModel() {
+    private val repository = NotesRepositoryImpl.getInstance(context)
     private val getAllNotesUseCase = GetAllNotesUseCase(repository)
     private val searchNotesUseCase = SearchNotesUseCase(repository)
     private val switchPinnedStatusUseCase = SwitchPinnedStatusUseCase(repository)
@@ -58,6 +53,7 @@ class NotesViewModel : ViewModel() {
                 is NotesCommands.InputSearchQuery -> {
                     query.update { command.query.trim() }
                 }
+
                 is NotesCommands.SwitchPinnedStatus -> {
                     switchPinnedStatusUseCase(command.noteId)
                 }

@@ -1,7 +1,7 @@
 [versions]
 agp = "8.4.0"
-kotlin = "1.9.24"
-ksp = "1.9.24-1.0.20"
+kotlin = "1.9.23"
+ksp = "1.9.23-1.0.20"
 coreKtx = "1.12.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -10,14 +10,15 @@ lifecycleRuntimeKtx = "2.7.0"
 lifecycleRuntimeCompose = "2.7.0"
 activityCompose = "1.8.2"
 composeBom = "2024.06.00"
-composeCompiler = "1.5.14"  # Обновлено для совместимости с Kotlin 1.9.24
+composeCompiler = "1.5.11"
 navigationCompose = "2.7.7"
 roomKtx = "2.6.1"
 roomCompiler = "2.6.1"
 materialIconsExtended = "1.5.4"
 hiltAndroid = "2.51"
 hiltNavigationCompose = "1.2.0"
-kotlinxSerializationJson = "1.5.1"
+kotlinxSerializationJson = "1.6.0"
+coil = "2.5.0"
 
 [libraries]
 # Core
@@ -54,6 +55,9 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltAndroid" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
+# Coil 2.x
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
 # Serialization
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }

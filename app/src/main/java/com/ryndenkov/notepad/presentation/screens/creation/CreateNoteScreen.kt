@@ -31,6 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import coil.compose.AsyncImage
 import com.ryndenkov.notepad.domain.ContentItem
 import com.ryndenkov.notepad.presentation.screens.creation.CreateNoteViewModel.CreateNoteCommand
 import com.ryndenkov.notepad.presentation.ui.theme.CustomIcons
@@ -141,9 +142,9 @@ fun CreateNoteScreen(
                             item(key = index) {
                                 when (contentItem) {
                                     is ContentItem.Image -> {
-                                        TextContent(
-                                            text = contentItem.url,
-                                            onTextChanged = {}
+                                        AsyncImage(
+                                            model = contentItem.url,
+                                            contentDescription = "Image from gallery"
                                         )
                                     }
 

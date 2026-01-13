@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 interface NotesRepository {
     suspend fun addNote(
         title: String,
-        content: String,
+        content: List<ContentItem>,
         isPinned: Boolean,
         updatedAt: Long
     )

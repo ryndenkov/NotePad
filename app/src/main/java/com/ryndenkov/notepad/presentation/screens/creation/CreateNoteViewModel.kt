@@ -80,7 +80,7 @@ class CreateNoteViewModel @Inject constructor(
                     if (previousState is CreateNoteState.Creation) {
                         previousState.content.toMutableList().apply {
                             val lastItem = last()
-                            if (lastItem is ContentItem.Text && lastItem.content.isNotBlank()) {
+                            if (lastItem is ContentItem.Text && lastItem.content.isBlank()) {
                                 removeAt(lastIndex)
                             }
                             add(ContentItem.Image(command.uri.toString()))

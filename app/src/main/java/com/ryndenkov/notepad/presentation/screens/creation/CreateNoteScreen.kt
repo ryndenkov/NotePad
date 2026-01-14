@@ -145,8 +145,8 @@ fun CreateNoteScreen(
                     )
                     Content(
                         modifier = Modifier
-                            .weight(1f)
-                            .padding(horizontal = 24.dp),
+                            .weight(1f),
+                        //.padding(horizontal = 24.dp),
                         content = currentState.content,
                         onDeleteImageClick = {},
                         onTextChanged = { index, text ->

@@ -145,7 +145,6 @@ fun NotesScreen(
             }
         }
     }
-
 }
 
 @OptIn(ExperimentalFoundationApi::class)

@@ -3,7 +3,6 @@ package com.ryndenkov.notepad.data
 import com.ryndenkov.notepad.domain.ContentItem
 import com.ryndenkov.notepad.domain.Note
 import kotlinx.serialization.encodeToString
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 private val json = Json { ignoreUnknownKeys = true }

@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">NotePad</string>
+    <string name="search">Search...</string>
+    <string name="all_notes">All Notes</string>
+    <string name="pinned">Pinned</string>
+    <string name="others">Others</string>
+    <string name="just_now">Just now</string>
+    <string name="h_ago">%1$d h ago</string>
+    <string name="edit_note">Edit Note</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="back">Back</string>
+    <string name="title">Title</string>
+    <string name="save_note">Save Note</string>
+    <string name="add_photo">Add photo</string>
+    <string name="create_note">Create Note</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.ryndenkov.notepad.presentation.utils
 
 import android.icu.text.SimpleDateFormat
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import com.ryndenkov.notepad.R
 import java.text.DateFormat
 import java.util.concurrent.TimeUnit
 
@@ -10,19 +13,20 @@ object DateFormatter {
     private val millisInDay = TimeUnit.DAYS.toMillis(1)
     private val formatter = SimpleDateFormat.getDateInstance(DateFormat.SHORT)
 
-    fun formatCurrentDate(): String{
+    fun formatCurrentDate(): String {
         return formatter.format(System.currentTimeMillis())
     }
 
+    @Composable
     fun formatDateToString(timestamp: Long): String {
         val now = System.currentTimeMillis()
         val diff = now - timestamp
 
         return when {
-            diff < millisInHour -> "Just now"
+            diff < millisInHour -> stringResource(R.string.just_now)
             diff < millisInDay -> {
                 val hours = TimeUnit.MILLISECONDS.toHours(diff)
-                "$hours h ago"
+                stringResource(R.string.h_ago, hours)
             }
 
             else -> {
